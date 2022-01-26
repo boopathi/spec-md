@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/leebyron/spec-md/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:leebyron/spec-md.git"
