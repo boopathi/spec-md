@@ -1,5 +1,36 @@
 # Spec Markdown
 
+Fork:
+
+This fork creates a new option to use numbered links for headings -
+
+```ts
+type options = {
+   // default: false
+  useNumberedHeadingLinks?: boolean
+}
+```
+
+```md
+# Heading 1
+
+## Heading 2
+```
+
+will render as -
+
+```html
+<a href="#sec-1"></a>
+// and
+<section id="sec-1"></section>
+
+<a href="#sec-2"></a>
+// and
+<section id="sec-2"></section>
+```
+
+--------
+
 Renders Markdown with some additions into an HTML format commonly used for
 writing technical specification documents. Markdown additions include code
 syntax highlighting, edit annotations, and the definition of algorithms and
