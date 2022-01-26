@@ -9,6 +9,7 @@ function print(ast, _options) {
     githubSource: _options && _options.githubSource || null,
     highlight: _options && _options.highlight || highlight,
     biblio: _options && _options.biblio && buildBiblio(_options.biblio) || {},
+    useNumberedHeadingLinks: _options && _options.useNumberedHeadingLinks || false,
     head: _options && _options.head || '',
   };
   validateSecIDs(ast, options);
@@ -221,7 +222,9 @@ function assignBiblioIDs(ast, options) {
   visit(ast, {
     enter: function (node) {
       if (node.type === 'Section') {
-        let secname = anchorize(node.header.title);
+        let secname = options.useNumberedHeadingLinks
+          ? join(node.header.secID, '.')
+          : anchorize(node.header.title);
         if (conflicts.hasOwnProperty(secname)) {
           secname = secnameStack[secnameStack.length - 1] + '.' + secname;
         }
