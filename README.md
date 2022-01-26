@@ -1,6 +1,12 @@
 # Spec Markdown
 
-Fork:
+## Fork:
+
+### Install
+
+```
+npm install @boopathi/spec-md
+```
 
 This fork creates a new option to use numbered links for headings -
 
